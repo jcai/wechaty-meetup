@@ -1,0 +1,37 @@
+{
+  "editor.wordWrap": "on",
+  "latex-workshop.latex.outDir":"TMP",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex",
+      "tools": [ "xelatex"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-file-line-error",
+        "-interaction=nonstopmode", 
+        "-synctex=1",
+        "-output-directory=%OUTDIR%",
+        "%DOCFILE%"
+      ],
+      "env": {
+        "TEXINPUTS": "%DIR%/../..:"
+      }
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%OUTDIR%/%DOCFILE%"
+      ],
+      "env": {
+        "TEXINPUTS": "%DIR%/../..:"
+      }
+    }
+  ]
+}
